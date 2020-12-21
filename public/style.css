@@ -1,0 +1,12 @@
+body {
+  font-family: sans-serif;
+  background-color: black;
+  color: rgb(240, 240, 240);
+  font-size: large;
+}
+
+#buttom {
+  background-color: #ccff00;
+  color: black;
+  padding: 10px;
+  }

@@ -1,0 +1,8 @@
+#
+POST  http://localhost:3000/examsettings
+content-type: application/x-www-form-urlencoded
+
+&subject=english,mathematics,goegraphy,literature
+&years=2019
+&jambno=12345678CB
+###

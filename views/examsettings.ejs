@@ -1,0 +1,153 @@
+<%-include('header')-%>
+    <script type="text/javascript">
+    function checkBoxLimit() {
+	var checkBoxGroup = document.forms['form_name']['subject[]'];			
+	var limit = 4;
+	for (var i = 0; i < checkBoxGroup.length; i++) {
+		checkBoxGroup[i].onclick = function() {
+			var checkedcount = 0;
+			for (var i = 0; i < checkBoxGroup.length; i++) {
+				checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
+			}
+			if (checkedcount > limit) {
+				console.log("You can only Select the maximum of " + limit + " Subjects.");
+				alert("You can only Select the Maximum of " + limit + " Subjects.");						
+				this.checked = false;
+			}
+		}
+	}
+}
+</script>
+
+
+<body>
+<div class="dropdown-divider"></div>
+<p style="text-align: center;"><b> Select your Subject of Study</b></p>
+<div class="dropdown-divider"></div>
+    <div class="container">
+        <div class="row"> 
+            <div class="col-sm">
+            <form action="/examsettings" name="form_name" id="form_name" method="POST">
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" name="subject[]" value="english" id="customSwitch1">
+                <label class="custom-control-label" for="customSwitch1">Engish Language</label>
+                </div>
+
+                <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" name="subject[]" value="mathematics" id="customSwitch2">
+                <label class="custom-control-label" for="customSwitch2">Mathematices</label>
+                </div>
+
+                <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" name="subject[]" value="economics" id="customSwitch3">
+                <label class="custom-control-label" for="customSwitch3">Economics</label>
+                </div>
+
+                <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" name="subject[]" value="geography" id="customSwitch4">
+                <label class="custom-control-label" for="customSwitch4">Geography</label>
+                </div>
+                
+                <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input"  name="subject[]" value="biology" id="customSwitch5">
+                <label class="custom-control-label" for="customSwitch5">Biology</label>
+                </div>
+            </div>
+
+            <div class="col-sm">
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" name="subject[]"  value="physics" id="customSwitch6">
+                <label class="custom-control-label" for="customSwitch6">Physics</label>
+                </div>
+    
+                <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" name="subject[]" value="chemistry" id="customSwitch7">
+                <label class="custom-control-label" for="customSwitch7">Chemistry</label>
+                </div>
+
+                <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" name="subject[]" value="accounting" id="customSwitch8">
+                <label class="custom-control-label" for="customSwitch8">Financial Account</label>
+                </div>
+
+                <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" name="subject[]" value="commerce" id="customSwitch9">
+                <label class="custom-control-label" for="customSwitch9">Commerce</label>
+                </div>
+                
+                <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" name="subject[]" value="englishlit" id="customSwitch10">
+                <label class="custom-control-label" for="customSwitch10">Literature in English</label>
+                </div>
+                
+            </div>
+            <div class="col-sm">
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" name="subject[]" value="crk" id="customSwitch11">
+                <label class="custom-control-label" for="customSwitch11">CRS</label>
+                </div>
+
+
+                <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" name="subject[]" value="irk" id="customSwitch12">
+                <label class="custom-control-label" for="customSwitch12">IRK</label>
+                </div>
+
+                <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" name="subject[]" value="insurance" id="customSwitch13">
+                <label class="custom-control-label" for="customSwitch13">Insurance</label>
+                </div>
+
+                <!-- <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch9">
+                <label class="custom-control-label" for="customSwitch9">Geography</label>
+                </div>
+                
+                <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch10">
+                <label class="custom-control-label" for="customSwitch10">Biology</label>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+    
+<br>
+    <div class="dropdown-divider"></div>
+            <p style="text-align: center;"><b> Year of Study and Jamb Registration</b></p>
+            <div class="dropdown-divider"></div>
+    <div class="container">
+        <div class="row"> 
+            <div class="col-sm">
+
+            
+            <div class="form-group col-md-4">
+                <label for="inputState"><b> Year</b></label>
+                <select id="inputState" class="form-control" name="years">
+                    <option selected>Choose...</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                </select>
+                </div>    
+
+                <div class="form-group col-md-4">
+                <label for="inputJamb4"><b> Jamb Registration No </b></label>
+                <input type="Jamb" class="form-control" id="inputJamb4" name="jambno" placeholder="Username">
+                </div>
+
+                <div class="form-group col-md-4">
+                <button type="submit" name="submit" id="buttom" class="btn btn-primary">Start</button>
+                </div>
+
+            </form>
+            <script type="text/javascript">checkBoxLimit()</script>
+            
+            </div>
+        </div>
+    </div>
+
+    <%-include('footer')-%>
